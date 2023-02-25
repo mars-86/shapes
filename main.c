@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "lib/shapes.h"
+#include "shapes.h"
 
 int main(int argc, char *argv[])
 {
