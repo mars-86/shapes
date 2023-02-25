@@ -20,7 +20,7 @@ line_t *line(int x1, int y1, int x2, int y2)
     getchar()
 #endif // __DEBUG
         INSERT_POINT(line_t, line, __x1, __y1);
-		if( __x1 == __x2 && __y1 == __y2) break;
+		if(__x1 == __x2 && __y1 == __y2) break;
 		int __e2 = __e1 << 1;
 		if (__e2 >= __dy){
 			__e1 += __dy; /* e_xy+e_x > 0 */
