@@ -3,7 +3,7 @@
 
 circle_t *circle(int x, int y, size_t radius)
 {
-    int __x = x, __y = y, __radius = radius,
+    int __x = x, __y = y,
         __x0 = 0,
         __y0 = radius,
         __p0 = 1 - radius; // 5 / 4 - r
@@ -37,5 +37,5 @@ circle_t *circle(int x, int y, size_t radius)
 
 void print_circle(circle_t *circle)
 {
-    PRINT(circle_t, circle);
+    PRINT(circle);
 }

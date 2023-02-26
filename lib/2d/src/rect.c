@@ -3,16 +3,21 @@
 
 rect_t *rect(int x1, int y1, size_t width, size_t height)
 {
-    int __x1 = x1, __y1 = y1, __width = x1 + width, __height = y1 + height;
-    CREATE_SHAPE(rect_t, rect);
+    int __x1 = x1,
+        __y1 = y1,
+        __width = x1 + width,
+        __height = y1 + height,
+        __size = (width + height) << 1;
+
+    _CREATE_SHAPE(rect_t, rect, __size);
 	while (__x1 < __width)
-        INSERT_POINT(rect_t, rect, __x1++, __y1);
+        _INSERT_POINT(rect, __x1++, __y1);
 	while (__y1 < __height)
-        INSERT_POINT(rect_t, rect, __x1, __y1++);
+        _INSERT_POINT(rect, __x1, __y1++);
 	while (__x1 > x1)
-        INSERT_POINT(rect_t, rect, __x1--, __y1);
+        _INSERT_POINT(rect, __x1--, __y1);
 	while (__y1 > y1)
-        INSERT_POINT(rect_t, rect, __x1, __y1--);
+        _INSERT_POINT(rect, __x1, __y1--);
 #ifdef __DEBUG
     PRINT(rect_t, rect);
 #endif // __DEBUG
@@ -21,5 +26,5 @@ rect_t *rect(int x1, int y1, size_t width, size_t height)
 
 void print_rect(rect_t *rect)
 {
-    PRINT(rect_t, rect);
+    _PRINT(rect);
 }

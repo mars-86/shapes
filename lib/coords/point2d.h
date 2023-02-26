@@ -15,12 +15,21 @@ struct _POINT2D_NODE {
 
 typedef struct _POINT2D_NODE point2d_node_t;
 
+
 struct _SHAPE2D {
-    point2d_t *points;
+    point2d_node_t *points;
     point2d_node_t *end;
     point2d_node_t *endp;
 };
 
 typedef struct _SHAPE2D shape2d_t;
+
+struct __SHAPE2D {
+    point2d_t *points;
+    point2d_t *end;
+    point2d_t *endp;
+};
+
+typedef struct __SHAPE2D _shape2d_t;
 
 #endif // __SHAPES_LIB_COORDS_POINT_2D_INCLUDED__

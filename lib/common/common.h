@@ -33,13 +33,39 @@ static inline point2d_node_t *create_node(int x, int y)
         } \
     } while (0);
 
-#define PRINT(type, shape) \
+#define PRINT(shape) \
     do { \
+        int i = 0; \
         point2d_node_t *node = NULL; \
-        for (node = shape->points; node != shape->endp; node = node->next) \
+        for (node = shape->points; node != shape->endp; node = node->next, ++i) \
             printf("x: %d - y: %d\n", node->point.x, node->point.y); \
         \
+        printf("size: %d\n", i); \
     } while (0);
 // void *create_shape(const char *type);
+
+#define _CREATE_SHAPE(__type, __name, __size) \
+    __type *__name = (__type *)malloc(sizeof(__type)); \
+    /* add one to set the endp */ \
+    __name->points = (point2d_t *)malloc((__size + 1)* sizeof(point2d_t)); \
+    __name->end = __name->points; \
+    __name->endp = __name->points + __size;
+
+#define _INSERT_POINT(__shape, __x, __y) \
+    do { \
+        if (__shape->end != __shape->endp) { \
+            __shape->end->x = __x; \
+            __shape->end->y = __y; \
+            __shape->end++; \
+        } \
+    } while (0);
+
+#define _PRINT(__shape) \
+    do { \
+        point2d_t *__ptr = NULL; \
+        for (__ptr = __shape->points; __ptr != __shape->end; ++__ptr) \
+            printf("x: %d - y: %d\n", __ptr->x, __ptr->y); \
+        \
+    } while (0);
 
 #endif // __SHAPES_LIB_COMMON_INCLUDED__

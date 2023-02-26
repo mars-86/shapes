@@ -37,5 +37,5 @@ line_t *line(int x1, int y1, int x2, int y2)
 
 void print_line(line_t *line)
 {
-    PRINT(line_t, line);
+    PRINT(line);
 }
