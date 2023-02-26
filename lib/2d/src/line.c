@@ -1,8 +1,6 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "../inc/line.h"
-#include "../../coords/point2d.h"
+#include "../../lib.h"
 #include "../../common/common.h"
 
 line_t *line(int x1, int y1, int x2, int y2)

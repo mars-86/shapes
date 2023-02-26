@@ -1,10 +1,9 @@
-#include <stdio.h>
-#include "../inc/rect.h"
+#include "../../lib.h"
 #include "../../common/common.h"
 
-rect_t *rect(int x1, int y1, unsigned int width, unsigned int height)
+rect_t *rect(int x1, int y1, size_t width, size_t height)
 {
-    int __x1 = x1, __y1 = y1, __width = width - 1, __height = height - 1;
+    int __x1 = x1, __y1 = y1, __width = x1 + width, __height = y1 + height;
     CREATE_SHAPE(rect_t, rect);
 	while (__x1 < __width)
         INSERT_POINT(rect_t, rect, __x1++, __y1);
