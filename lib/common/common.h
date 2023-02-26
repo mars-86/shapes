@@ -1,14 +1,14 @@
-#ifndef __SHAPES_LIB_COMMON_INCLUDED__
-#define __SHAPES_LIB_COMMON_INCLUDED__
-
+#ifndef __SHAPES_LIB_COMMON_INCLUDED_H__
+#define __SHAPES_LIB_COMMON_INCLUDED_H__
+ 
 #include <stdlib.h>
 #include "../coords/point2d.h"
 
-static inline point2d_node_t *create_node(int __x, int __y)
+static inline point2d_node_t *create_node(int x, int y)
 {
     point2d_node_t *__node = (point2d_node_t *)malloc(sizeof(point2d_node_t));
-    __node->point.x = __x;
-    __node->point.y = __y;
+    __node->point.x = x;
+    __node->point.y = y;
     __node->next = NULL;
 
     return __node;

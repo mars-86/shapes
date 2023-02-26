@@ -16,7 +16,7 @@ struct _POINT2D_NODE {
 typedef struct _POINT2D_NODE point2d_node_t;
 
 struct _SHAPE2D {
-    point2d_node_t *points;
+    point2d_t *points;
     point2d_node_t *end;
     point2d_node_t *endp;
 };
