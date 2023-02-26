@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include "../coords/point2d.h"
 
-static point2d_node_t *create_node(int __x, int __y)
+static inline point2d_node_t *create_node(int __x, int __y)
 {
     point2d_node_t *__node = (point2d_node_t *)malloc(sizeof(point2d_node_t));
     __node->point.x = __x;
