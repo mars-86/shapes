@@ -8,7 +8,7 @@
 
  #endif // __MINGW32__ || __MINGW64__
 #else
- #include "__sys/linux/proto.h"
+ #include "__sys/linux/shapes.h"
 #endif // _WIN32
 
 #endif // __SHAPES_LIB_INCLUDED_H__
