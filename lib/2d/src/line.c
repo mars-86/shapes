@@ -21,13 +21,13 @@ line_t *line(int x1, int y1, int x2, int y2)
 	/* pre calculate line size */
 	size_t size = __calculate_size(x1, y1, x2, y2);
 
-	CREATE_SHAPE(line_t, line);
+	_CREATE_SHAPE(line_t, line, size);
 	while (1) {   /* loop */
 #ifdef __DEBUG
     printf("x1: %d - y1: %d - e1: %d", __x1, __y1, __e1);
     getchar()
 #endif // __DEBUG
-        INSERT_POINT(line_t, line, __x1, __y1);
+        _INSERT_POINT(line, __x1, __y1);
 		if (__x1 == __x2 && __y1 == __y2) break;
 		int __e2 = __e1 << 1;
 		if (__e2 >= __dy) {
@@ -40,12 +40,12 @@ line_t *line(int x1, int y1, int x2, int y2)
 		}
 	}
 #ifdef __DEBUG
-    PRINT(line_t, line);
+    _PRINT(line_t, line);
 #endif // __DEBUG
     return line;
 }
 
 void print_line(line_t *line)
 {
-    PRINT(line);
+    _PRINT(line);
 }
